@@ -1,7 +1,7 @@
 # ConZIC
 Official implementation of "ConZIC: Controllable Zero-shot Image Captioning by Sampling-Based Polishing"
 
-![image](framework.png)
+![image](model.jpg)
 
 Code is coming soon!
 
