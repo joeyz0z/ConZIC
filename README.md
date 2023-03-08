@@ -1,21 +1,21 @@
 # Pytorch Implementation of [ConZIC: Controllable Zero-shot Image Captioning by Sampling-Based Polishing](https://arxiv.org/abs/2303.02437) [CVPR 2023]
 
-## Framework
+### Framework
 ![](paper_images/framework.jpg)
 
-## Example of length control
+### Example of length control
 ![](paper_images/lengthcontrol.jpg)
 
-## Example of sentiment control
+### Example of sentiment control
 ![](paper_images/sentimentcontrol.jpg)
 
-## Example of part-of-speech control
+### Example of part-of-speech control
 ![](paper_images/poscontrol.jpg)
 
-## Example of diverse captioning
+### Example of diverse captioning
 ![](paper_images/diversecaptioning.jpg)
 
-## Example of various image styles with world knowledge
+### Example of various image styles with world knowledge
 ![](paper_images/moreimagestyles.jpg)
 
 
