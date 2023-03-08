@@ -1,3 +1,0 @@
-Generating order:random
-Run type:positive
-Namespace(seed=42, batch_size=1, device='cuda', run_type='controllable', prompt='Image of a', order='random', control_type='sentiment', pos_type=[['DET'], ['ADJ', 'NOUN'], ['NOUN'], ['VERB'], ['VERB'], ['ADV'], ['ADP'], ['DET', 'NOUN'], ['NOUN'], ['NOUN'], ['.', 'NOUN'], ['.', 'NOUN']], sentiment_type='positive', samples_num=1, sentence_len=10, candidate_k=200, alpha=0.02, beta=2.0, gamma=5.0, lm_temperature=0.1, num_iterations=10, lm_model='../HuggingFace/bert-base-uncased', match_model='../HuggingFace/clip-vit-base-patch32', caption_img_path='./examples/', stop_words_path='stop_words.txt', add_extra_stopwords=[])
