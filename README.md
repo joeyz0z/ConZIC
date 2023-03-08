@@ -23,19 +23,19 @@
 
 ### To run zero-shot captioning on images:
 ConZIC supports arbitary generation orders by change **order**. You can increase **alpha** for more fluency, **beta** for more image content. Notably, there is a trade-off between fluency and image-matching degree.  
-Sequential: update tokens in classical left to right order. At each iteration, the whole sentence will be updated.
+**Sequential**: update tokens in classical left to right order. At each iteration, the whole sentence will be updated.
 ```
 python run.py --run_type "caption" --order "sequential" --sentence_len 10 --caption_img_path "./examples" 
 --lm_model "bert-base-uncased" --match_model "clip-vit-base-patch32" 
 --alpha 0.02 --beta 2.0
 ```
-Shuffled: update tokens in random shuffled generation order, different orders resulting in different captions.
+**Shuffled**: update tokens in random shuffled generation order, different orders resulting in different captions.
 ```
 python run.py --run_type "caption" --order "shuffle" --sentence_len 10 --caption_img_path "./examples" 
 --lm_model "bert-base-uncased" --match_model "clip-vit-base-patch32" 
 --alpha 0.02 --beta 2.0
 ```
-Random: only randomly select a position and then update this token at each iteration, high diversity due to high randomness. 
+**Random**: only randomly select a position and then update this token at each iteration, high diversity due to high randomness. 
 ```
 python run.py --run_type "caption" --order "random" --sentence_len 10 --caption_img_path "./examples" 
 --lm_model "bert-base-uncased" --match_model "clip-vit-base-patch32" 
@@ -43,8 +43,8 @@ python run.py --run_type "caption" --order "random" --sentence_len 10 --caption_
 ```
 
 ### To run controllable zero-shot captioning on images:
-ConZIC supports many text-related controllable signals. For examples:
-Sentiments(positive/negative): you can increase **gamma** for higher controllable degree, there is also a trade-off.
+ConZIC supports many text-related controllable signals. For examples:  
+**Sentiments(positive/negative)**: you can increase **gamma** for higher controllable degree, there is also a trade-off.
 ```
 python run.py 
 --run_type "controllable" --control_type "sentiment" --sentiment_type "positive"
@@ -52,7 +52,7 @@ python run.py
 --lm_model "bert-base-uncased" --match_model "clip-vit-base-patch32" 
 --alpha 0.02 --beta 2.0 --gamma 5.0
 ```
-Part-of-speech(POS): it will meet the predefined POS templete as much as possible.
+**Part-of-speech(POS)**: it will meet the predefined POS templete as much as possible.
 ```
 python run.py 
 --run_type "controllable" --control_type "pos" --order "sequential"
