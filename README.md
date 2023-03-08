@@ -22,7 +22,7 @@
 ## DEMO
 
 ### To run zero-shot captioning on images:
-ConZIC supports arbitary generation orders by change **order**. You can increase **alpha** for more fluency, **beta** for more image content. Notably, there is a trade-off between fluency and image-matching degree.
+ConZIC supports arbitary generation orders by change **order**. You can increase **alpha** for more fluency, **beta** for more image content. Notably, there is a trade-off between fluency and image-matching degree.  
 Sequential: update tokens in classical left to right order. At each iteration, the whole sentence will be updated.
 ```
 python run.py --run_type "caption" --order "sequential" --sentence_len 10 --caption_img_path "./examples" 
