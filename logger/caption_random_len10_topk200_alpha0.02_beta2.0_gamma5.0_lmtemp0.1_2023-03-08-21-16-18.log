@@ -1,0 +1,22 @@
+Generating order:random
+Run type:caption
+Namespace(seed=42, batch_size=1, device='cuda', run_type='caption', prompt='Image of a', order='random', control_type='pos', pos_type=[['DET'], ['ADJ', 'NOUN'], ['NOUN'], ['VERB'], ['VERB'], ['ADV'], ['ADP'], ['DET', 'NOUN'], ['NOUN'], ['NOUN', '.'], ['.', 'NOUN'], ['.', 'NOUN']], sentiment_type='positive', samples_num=1, sentence_len=10, candidate_k=200, alpha=0.02, beta=2.0, gamma=5.0, lm_temperature=0.1, num_iterations=10, lm_model='../HuggingFace/bert-base-uncased', match_model='../HuggingFace/clip-vit-base-patch32', caption_img_path='./examples/', stop_words_path='stop_words.txt', add_extra_stopwords=[])
+The 0-th image: CT.jpeg
+iter 10, clip score 0.298: [CLS] image of a [MASK] [MASK] passed across more [MASK]gy inner [MASK]. [SEP]
+iter 20, clip score 0.336: [CLS] image of a [MASK] patient awake in various podgy gray [MASK]. [SEP]
+iter 30, clip score 0.369: [CLS] image of a neurological patient all within several buggy gray caps. [SEP]
+iter 40, clip score 0.375: [CLS] image of a neurological rash pictured in various buggy gray caps. [SEP]
+iter 50, clip score 0.372: [CLS] image of a neurological rash pictured in various buggy white prints. [SEP]
+iter 60, clip score 0.367: [CLS] image of a brain disease display wearing various baggy bicycle prints. [SEP]
+iter 70, clip score 0.379: [CLS] image of a brain injury displaying various buggy bicycle prints. [SEP]
+iter 80, clip score 0.384: [CLS] image of a brain trauma displaying various buggy bicycle prints. [SEP]
+iter 90, clip score 0.364: [CLS] image of a brain trauma correcting various buggy bicycle prints. [SEP]
+iter 100, clip score 0.360: [CLS] image of a brain trauma correcting various buggy bicycle rides. [SEP]
+Finished in 9.068s
+final caption: image of a brain trauma correcting various buggy bicycle rides.
+best caption: image of a brain trauma displaying various buggy bicycle prints.
+The 1-th image: obama.jpeg
+iter 10, clip score 0.324: [CLS] image of a tanned couple in [MASK] dresses sometimes grinning together [MASK] [MASK] [SEP]
+iter 20, clip score 0.325: [CLS] image of a tanned couple in [MASK] dresses sometimes smiling together together. [SEP]
+iter 30, clip score 0.339: [CLS] image of a tanned couple in velvet dresses sometimes grinning together together. [SEP]
+iter 40, clip score 0.339: [CLS] image of a tanned couple in velvet dresses sometimes grinning together together. [SEP]

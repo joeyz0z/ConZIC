@@ -1,0 +1,48 @@
+Generating order:shuffle
+Run type:caption
+Namespace(seed=42, batch_size=1, device='cuda', run_type='caption', prompt='Image of a', order='shuffle', control_type='sentiment', pos_type=[['DET'], ['ADJ', 'NOUN'], ['NOUN'], ['VERB'], ['VERB'], ['ADV'], ['ADP'], ['DET', 'NOUN'], ['NOUN'], ['NOUN'], ['.', 'NOUN'], ['.', 'NOUN']], sentiment_type='positive', samples_num=1, sentence_len=10, candidate_k=200, alpha=0.02, beta=2.0, gamma=5.0, lm_temperature=0.1, num_iterations=10, lm_model='../HuggingFace/bert-base-uncased', match_model='../HuggingFace/clip-vit-base-patch32', caption_img_path='./examples/', stop_words_path='stop_words.txt', add_extra_stopwords=[])
+The 0-th image: CT.jpeg
+Order_list:[7, 3, 2, 8, 5, 6, 9, 4, 0, 1]
+iter 1, clip score 0.331: [CLS] image of a patient potentially bleeding across at brain is i repeated. [SEP]
+iter 2, clip score 0.339: [CLS] image of a patients of bleeding out following stroke is then shown. [SEP]
+iter 3, clip score 0.335: [CLS] image of a minority of the als throughout the accident also exhibited. [SEP]
+iter 4, clip score 0.371: [CLS] image of a series of brain patient displaying various mri was exhibited. [SEP]
+iter 5, clip score 0.361: [CLS] image of a series of amnesia patients with the brain marks shown. [SEP]
+iter 6, clip score 0.357: [CLS] image of a sequence of four patients with damaged brain is shown. [SEP]
+iter 7, clip score 0.361: [CLS] image of a sequence of eight cases of bruised brain is shown. [SEP]
+iter 8, clip score 0.372: [CLS] image of a series of twelve reports of swelling brain is displayed. [SEP]
+iter 9, clip score 0.356: [CLS] image of a series of clinical reports on the brain panels above. [SEP]
+iter 10, clip score 0.350: [CLS] image of a network of multiple patients in the ct photograph above. [SEP]
+Finished in 9.619s
+final caption: image of a network of multiple patients in the ct photograph above.
+best caption: image of a series of twelve reports of swelling brain is displayed.
+The 1-th image: obama.jpeg
+Order_list:[3, 5, 2, 4, 1, 8, 7, 0, 6, 9]
+iter 1, clip score 0.310: [CLS] image of a black couple lying together both smiling with suppressed embarrassment. [SEP]
+iter 2, clip score 0.320: [CLS] image of a black husband in love openly laughing with cold contempt. [SEP]
+iter 3, clip score 0.313: [CLS] image of a fourth husband in love always grinning signaling his approval. [SEP]
+iter 4, clip score 0.309: [CLS] image of a couple madly in love together really attracts black approval. [SEP]
+iter 5, clip score 0.322: [CLS] image of a pair happy in love whom again with black jealousy. [SEP]
+iter 6, clip score 0.312: [CLS] image of a leader falling in love and engage with black enemies. [SEP]
+iter 7, clip score 0.310: [CLS] image of a leader happily in love often engagement with native enemies. [SEP]
+iter 8, clip score 0.336: [CLS] image of a leader happily in love typically partnered with black enemies. [SEP]
+iter 9, clip score 0.324: [CLS] image of a secretary happily in love frequently matched surrounding black male. [SEP]
+iter 10, clip score 0.337: [CLS] image of a leader smiling in love is seen toward black male. [SEP]
+Finished in 9.021s
+final caption: image of a leader smiling in love is seen toward black male.
+best caption: image of a leader smiling in love is seen toward black male.
+The 2-th image: sm.jpeg
+Order_list:[7, 5, 0, 2, 4, 9, 1, 6, 3, 8]
+iter 1, clip score 0.306: [CLS] image of a little simple need him as need suited him suit. [SEP]
+iter 2, clip score 0.338: [CLS] image of a typical comic drawing him as small little american toy. [SEP]
+iter 3, clip score 0.350: [CLS] image of a web connection characters him as a little americannik. [SEP]
+iter 4, clip score 0.327: [CLS] image of a comic originally dressed tony as a little wall spider. [SEP]
+iter 5, clip score 0.365: [CLS] image of a character redesign depicting logan as a mini cartoon spider. [SEP]
+iter 6, clip score 0.291: [CLS] image of a clothing pattern poses characters as a little conner. [SEP]
+iter 7, clip score 0.340: [CLS] image of a spider since both characters are portraying baby zootees. [SEP]
+iter 8, clip score 0.321: [CLS] image of a superhero since the series are actually colored picnies. [SEP]
+iter 9, clip score 0.313: [CLS] image of a superhero in the series has also drawn mycule. [SEP]
+iter 10, clip score 0.313: [CLS] image of a superhero in the film has been drawn pineby. [SEP]
+Finished in 9.330s
+final caption: image of a superhero in the film has been drawn pineby.
+best caption: image of a character redesign depicting logan as a mini cartoon spider.

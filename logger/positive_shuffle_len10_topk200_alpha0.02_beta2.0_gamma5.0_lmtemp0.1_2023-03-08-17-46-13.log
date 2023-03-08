@@ -1,0 +1,48 @@
+Generating order:shuffle
+Run type:positive
+Namespace(seed=42, batch_size=1, device='cuda', run_type='controllable', prompt='Image of a', order='shuffle', control_type='sentiment', pos_type=[['DET'], ['ADJ', 'NOUN'], ['NOUN'], ['VERB'], ['VERB'], ['ADV'], ['ADP'], ['DET', 'NOUN'], ['NOUN'], ['NOUN'], ['.', 'NOUN'], ['.', 'NOUN']], sentiment_type='positive', samples_num=1, sentence_len=10, candidate_k=200, alpha=0.02, beta=2.0, gamma=5.0, lm_temperature=0.1, num_iterations=10, lm_model='../HuggingFace/bert-base-uncased', match_model='../HuggingFace/clip-vit-base-patch32', caption_img_path='./examples/', stop_words_path='stop_words.txt', add_extra_stopwords=[])
+The 0-th image: CT.jpeg
+Order_list:[7, 3, 2, 8, 5, 6, 9, 4, 0, 1]
+iter 1, clip score 0.309, ctl score -0.116:[CLS] image of a med iv bleeding across my brain said i repeated. [SEP]
+iter 2, clip score 0.340, ctl score 2.930:[CLS] image of a successful case showing clear healthy brain fitting names best. [SEP]
+iter 3, clip score 0.337, ctl score 2.454:[CLS] image of a clinical case showing perfectly excellent mind overall characters best. [SEP]
+iter 4, clip score 0.344, ctl score 1.528:[CLS] image of a clinical case indicating consistently excellent memory intact at work. [SEP]
+iter 5, clip score 0.339, ctl score 2.404:[CLS] image of a successful case indicating good detailed memory integrity during treatment. [SEP]
+iter 6, clip score 0.347, ctl score 2.090:[CLS] image of a successful case indicating best adequate memory integrity after infection. [SEP]
+iter 7, clip score 0.348, ctl score 2.622:[CLS] image of a successful selection indicating an excellent brain pathogen avoidance therapy. [SEP]
+iter 8, clip score 0.346, ctl score 1.240:[CLS] image of a large panel indicating an excellent baseline neuralic response. [SEP]
+iter 9, clip score 0.344, ctl score 1.597:[CLS] image of a neurological panel indicating an excellent successful paretic outcome. [SEP]
+iter 10, clip score 0.343, ctl score 1.923:[CLS] image of a brain panel shows an excellent good cluster diagnosis procedure. [SEP]
+Finished in 27.923s
+final caption: image of a brain panel shows an excellent good cluster diagnosis procedure.
+best caption: image of a successful selection indicating an excellent brain pathogen avoidance therapy.
+The 1-th image: obama.jpeg
+Order_list:[3, 5, 2, 4, 1, 8, 7, 0, 6, 9]
+iter 1, clip score 0.304, ctl score -0.186:[CLS] image of a new couple lying together both smiling with suppressed embarrassment. [SEP]
+iter 2, clip score 0.313, ctl score 2.522:[CLS] image of a gorgeous couple we love apparently laughing in righteous embarrassment. [SEP]
+iter 3, clip score 0.322, ctl score 2.460:[CLS] image of a gorgeous couple he love really laughing with righteous embarrassment. [SEP]
+iter 4, clip score 0.323, ctl score 2.460:[CLS] image of a gorgeous couple he loves really laughing with righteous embarrassment. [SEP]
+iter 5, clip score 0.323, ctl score 2.460:[CLS] image of a gorgeous couple he loves really laughing with righteous embarrassment. [SEP]
+iter 6, clip score 0.323, ctl score 2.460:[CLS] image of a gorgeous couple he loves really laughing with righteous embarrassment. [SEP]
+iter 7, clip score 0.323, ctl score 2.460:[CLS] image of a gorgeous couple he loves really laughing with righteous embarrassment. [SEP]
+iter 8, clip score 0.323, ctl score 2.460:[CLS] image of a gorgeous couple he loves really laughing with righteous embarrassment. [SEP]
+iter 9, clip score 0.323, ctl score 2.460:[CLS] image of a gorgeous couple he loves really laughing with righteous embarrassment. [SEP]
+iter 10, clip score 0.323, ctl score 2.460:[CLS] image of a gorgeous couple he loves really laughing with righteous embarrassment. [SEP]
+Finished in 23.501s
+final caption: image of a gorgeous couple he loves really laughing with righteous embarrassment.
+best caption: image of a gorgeous couple he loves really laughing with righteous embarrassment.
+The 2-th image: sm.jpeg
+Order_list:[7, 5, 0, 2, 4, 9, 1, 6, 3, 8]
+iter 1, clip score 0.314, ctl score 2.154:[CLS] image of a perfect toy drawing perfectly beautiful need connecting him better. [SEP]
+iter 2, clip score 0.340, ctl score 2.436:[CLS] image of a super awesome little spider suited symbol loved him best. [SEP]
+iter 3, clip score 0.294, ctl score 3.015:[CLS] image of a cute mom gorgeous pet baby man loved cartoon superhero. [SEP]
+iter 4, clip score 0.320, ctl score 2.249:[CLS] image of a cartoon character style suit nice guy love best buy. [SEP]
+iter 5, clip score 0.315, ctl score 4.158:[CLS] image of a marvel got it at cute mom best good mommy website [SEP]
+iter 6, clip score 0.340, ctl score 2.406:[CLS] image of a superhero got ordered from cute awesome best buy app. [SEP]
+iter 7, clip score 0.366, ctl score 2.722:[CLS] image of a spiderman commissioned throughout awesome mom best buy app. [SEP]
+iter 8, clip score 0.371, ctl score 2.026:[CLS] image of a spiderman designed for mommy baby best buy pin. [SEP]
+iter 9, clip score 0.368, ctl score 2.817:[CLS] image of a spiderman designed for lucky mommy best buy pin. [SEP]
+iter 10, clip score 0.377, ctl score 1.951:[CLS] image of a spiderman created via lucky rabbit best buy pin. [SEP]
+Finished in 25.812s
+final caption: image of a spiderman created via lucky rabbit best buy pin.
+best caption: image of a spiderman created via lucky rabbit best buy pin.

@@ -1,0 +1,45 @@
+Generating order:sequential
+Run type:caption
+Namespace(seed=42, batch_size=1, device='cuda', run_type='caption', prompt='Image of a', order='sequential', control_type='sentiment', pos_type=[['DET'], ['ADJ', 'NOUN'], ['NOUN'], ['VERB'], ['VERB'], ['ADV'], ['ADP'], ['DET', 'NOUN'], ['NOUN'], ['NOUN'], ['.', 'NOUN'], ['.', 'NOUN']], sentiment_type='positive', samples_num=1, sentence_len=10, candidate_k=200, alpha=0.02, beta=2.0, gamma=5.0, lm_temperature=0.1, num_iterations=10, lm_model='../HuggingFace/bert-base-uncased', match_model='../HuggingFace/clip-vit-base-patch32', caption_img_path='./examples/', stop_words_path='stop_words.txt', add_extra_stopwords=[])
+The 0-th image: CT.jpeg
+iter 1, clip score 0.356: [CLS] image of a sick brain setting following various patient care signs photographs. [SEP]
+iter 2, clip score 0.363: [CLS] image of a wide imaging cluster from brain damaged international campaign photos. [SEP]
+iter 3, clip score 0.338: [CLS] image of a multiples taken since childhood seen and operated afterwards. [SEP]
+iter 4, clip score 0.351: [CLS] image of a cns strain in hospital developed and released images. [SEP]
+iter 5, clip score 0.347: [CLS] image of a cns strain in the treated and raw frames. [SEP]
+iter 6, clip score 0.363: [CLS] image of a cns coma contrast pattern showing in two images. [SEP]
+iter 7, clip score 0.339: [CLS] image of a cns coma lesions including symptoms connecting the legs. [SEP]
+iter 8, clip score 0.350: [CLS] image of a cns brain lesions and complications of the technique. [SEP]
+iter 9, clip score 0.353: [CLS] image of a multiple of brain lesions further complications with this technique. [SEP]
+iter 10, clip score 0.347: [CLS] image of a selection of brain reported no patient using this technique. [SEP]
+Finished in 9.971s
+final caption: image of a selection of brain reported no patient using this technique.
+best caption: image of a cns coma contrast pattern showing in two images.
+The 1-th image: obama.jpeg
+iter 1, clip score 0.316: [CLS] image of a couple laughing tonight toward new washington center reception rocks. [SEP]
+iter 2, clip score 0.329: [CLS] image of a couple laughing blankly before historic history tour our heart. [SEP]
+iter 3, clip score 0.325: [CLS] image of a couple giggling together before celebrating bush nyre. [SEP]
+iter 4, clip score 0.331: [CLS] image of a couple grinning love bonds via wmd linknet. [SEP]
+iter 5, clip score 0.301: [CLS] image of a pair speaking powerful greeting via wdc activel. [SEP]
+iter 6, clip score 0.323: [CLS] image of a president smiling inaugural engagement via wphx london. [SEP]
+iter 7, clip score 0.293: [CLS] image of a softly caressing fourth term via wltx blog. [SEP]
+iter 8, clip score 0.306: [CLS] image of a couple toward fifth term via vltv communications. [SEP]
+iter 9, clip score 0.306: [CLS] image of a date at sixth party summit pleshette park. [SEP]
+iter 10, clip score 0.307: [CLS] image of a date at february twelfth address pleshette grounds. [SEP]
+Finished in 8.876s
+final caption: image of a date at february twelfth address pleshette grounds.
+best caption: image of a couple grinning love bonds via wmd linknet.
+The 2-th image: sm.jpeg
+iter 1, clip score 0.325: [CLS] image of a short boy representing something super you can print out. [SEP]
+iter 2, clip score 0.359: [CLS] image of a short boy like peter parker you can printable. [SEP]
+iter 3, clip score 0.379: [CLS] image of a tiny cartoon matching peter parker we have printable. [SEP]
+iter 4, clip score 0.389: [CLS] image of a little cartoon matching peter parker your ipod screenable. [SEP]
+iter 5, clip score 0.352: [CLS] image of a tiny cartoon little peter if your suit wear colors. [SEP]
+iter 6, clip score 0.347: [CLS] image of a huge cartoon tiny spider change me and my suit. [SEP]
+iter 7, clip score 0.303: [CLS] image of a colored for tiny person the me and my mask. [SEP]
+iter 8, clip score 0.342: [CLS] image of a like for shortman because peter is spider man. [SEP]
+iter 9, clip score 0.371: [CLS] image of a pin drawn spider character baby luke in spiderman. [SEP]
+iter 10, clip score 0.361: [CLS] image of a simple pocket spider drawing little character in spider man. [SEP]
+Finished in 8.905s
+final caption: image of a simple pocket spider drawing little character in spider man.
+best caption: image of a little cartoon matching peter parker your ipod screenable.

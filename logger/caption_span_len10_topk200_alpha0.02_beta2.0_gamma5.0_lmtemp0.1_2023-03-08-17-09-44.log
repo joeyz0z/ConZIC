@@ -1,0 +1,45 @@
+Generating order:span
+Run type:caption
+Namespace(seed=42, batch_size=1, device='cuda', run_type='caption', prompt='Image of a', order='span', control_type='sentiment', pos_type=[['DET'], ['ADJ', 'NOUN'], ['NOUN'], ['VERB'], ['VERB'], ['ADV'], ['ADP'], ['DET', 'NOUN'], ['NOUN'], ['NOUN'], ['.', 'NOUN'], ['.', 'NOUN']], sentiment_type='positive', samples_num=1, sentence_len=10, candidate_k=200, alpha=0.02, beta=2.0, gamma=5.0, lm_temperature=0.1, num_iterations=10, lm_model='../HuggingFace/bert-base-uncased', match_model='../HuggingFace/clip-vit-base-patch32', caption_img_path='./examples/', stop_words_path='stop_words.txt', add_extra_stopwords=[])
+The 0-th image: CT.jpeg
+iter 1, clip score 0.336: [CLS] image of a sick head seen screen photos within large letters. [SEP]
+iter 2, clip score 0.336: [CLS] image of a human scan row block page images featuring bold signs. [SEP]
+iter 3, clip score 0.317: [CLS] image of a scan center row after head cluster of of rows. [SEP]
+iter 4, clip score 0.343: [CLS] image of a patient subject in different multiple thousands of of ms. [SEP]
+iter 5, clip score 0.345: [CLS] image of a patient held in various thousands signs of of concussion. [SEP]
+iter 6, clip score 0.349: [CLS] image of a mother swelling beside various dots displays of a brain. [SEP]
+iter 7, clip score 0.372: [CLS] image of a patient floating numerous different patterns panels in gray matter. [SEP]
+iter 8, clip score 0.387: [CLS] image of a patient displaying various blood patterns signs gray gray matter. [SEP]
+iter 9, clip score 0.379: [CLS] image of a wife giving blood various variations surrounding grey gray matter. [SEP]
+iter 10, clip score 0.300: [CLS] image of a girl giving blood multiple times in gray grey patches. [SEP]
+Finished in 8.924s
+final caption: image of a girl giving blood multiple times in gray grey patches.
+best caption: image of a patient displaying various blood patterns signs gray gray matter.
+The 1-th image: obama.jpeg
+iter 1, clip score 0.334: [CLS] image of a couple black actors smiling at left hand office eyes. [SEP]
+iter 2, clip score 0.321: [CLS] image of a couple black women boys laughing hand rolled of eyes. [SEP]
+iter 3, clip score 0.334: [CLS] image of a both black couple holding smiles hand wipe their coats. [SEP]
+iter 4, clip score 0.318: [CLS] image of a brown black couples giggling to their their friends. [SEP]
+iter 5, clip score 0.316: [CLS] image of a black married couple couple greeting discussing their old friend. [SEP]
+iter 6, clip score 0.314: [CLS] image of a black young married pair saying knowing american a leader. [SEP]
+iter 7, clip score 0.318: [CLS] image of a black smiling wife president w african american american woman. [SEP]
+iter 8, clip score 0.333: [CLS] image of a smiling jealous president of african elegant american young couple. [SEP]
+iter 9, clip score 0.324: [CLS] image of a smiling corrupt presidenting black an handsome elderly partner. [SEP]
+iter 10, clip score 0.309: [CLS] image of a miss who marries hated corrupt black business business president. [SEP]
+Finished in 8.336s
+final caption: image of a miss who marries hated corrupt black business business president.
+best caption: image of a both black couple holding smiles hand wipe their coats.
+The 2-th image: sm.jpeg
+iter 1, clip score 0.326: [CLS] image of a short boy representing something super seemed to tobey. [SEP]
+iter 2, clip score 0.368: [CLS] image of a cartoon mascot describing wearing similar everything to tobey. [SEP]
+iter 3, clip score 0.356: [CLS] image of a cartoon suit showing structure closest according to tobey. [SEP]
+iter 4, clip score 0.347: [CLS] image of a transparent figure drew translated the thanks to tobey. [SEP]
+iter 5, clip score 0.290: [CLS] image of a figure babylingified around back to toon. [SEP]
+iter 6, clip score 0.328: [CLS] image of a baby paralink drawn transparent him intowsuit. [SEP]
+iter 7, clip score 0.362: [CLS] image of a serial spiderman one character style wearing sunsuit. [SEP]
+iter 8, clip score 0.341: [CLS] image of a superhero spider in city uniform design jeanssss. [SEP]
+iter 9, clip score 0.328: [CLS] image of a mascot suit suit superhero print in web web site. [SEP]
+iter 10, clip score 0.359: [CLS] image of a mini spider figure colourized line template on graphics. [SEP]
+Finished in 8.195s
+final caption: image of a mini spider figure colourized line template on graphics.
+best caption: image of a cartoon mascot describing wearing similar everything to tobey.

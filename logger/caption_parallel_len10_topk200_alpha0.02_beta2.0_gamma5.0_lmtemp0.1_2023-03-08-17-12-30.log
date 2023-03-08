@@ -1,0 +1,45 @@
+Generating order:parallel
+Run type:caption
+Namespace(seed=42, batch_size=1, device='cuda', run_type='caption', prompt='Image of a', order='parallel', control_type='sentiment', pos_type=[['DET'], ['ADJ', 'NOUN'], ['NOUN'], ['VERB'], ['VERB'], ['ADV'], ['ADP'], ['DET', 'NOUN'], ['NOUN'], ['NOUN'], ['.', 'NOUN'], ['.', 'NOUN']], sentiment_type='positive', samples_num=1, sentence_len=10, candidate_k=200, alpha=0.02, beta=2.0, gamma=5.0, lm_temperature=0.1, num_iterations=10, lm_model='../HuggingFace/bert-base-uncased', match_model='../HuggingFace/clip-vit-base-patch32', caption_img_path='./examples/', stop_words_path='stop_words.txt', add_extra_stopwords=[])
+The 0-th image: CT.jpeg
+iter1: [CLS] image of a sick i across overhead overhead during i i in. [SEP]
+iter2: [CLS] image of a brainrrtised in ii ii in. [SEP]
+iter3: [CLS] image of a reccriene in treatmentc in. [SEP]
+iter4: [CLS] image of a rec acrienc and vac im. [SEP]
+iter5: [CLS] image of a rec acrienc and vacs. [SEP]
+iter6: [CLS] image of a rev acdinc and varcs. [SEP]
+iter7: [CLS] image of a re v ipdup and v dcp. [SEP]
+iter8: [CLS] image of a c v ipdup and v dcp. [SEP]
+iter9: [CLS] image of a cv ipdum and vc dcpo. [SEP]
+iter10: [CLS] image of a cv ipdum and vc dcpo. [SEP]
+Finished in 6.027s
+final caption: image of a cv ipdum and vc dcpo.
+best caption: image of a cv ipdum and vc dcpo.
+The 1-th image: obama.jpeg
+iter1: [CLS] image of a couple couple together together together united united couple together. [SEP]
+iter2: [CLS] image of a. back laughing back. united united back look. [SEP]
+iter3: [CLS] image of a. united grinning against. united united return motion. [SEP]
+iter4: [CLS] image of a. united embracing against. united united help motion. [SEP]
+iter5: [CLS] image of a. united engagement together. united together peace motion. [SEP]
+iter6: [CLS] image of a. united yourself together. united together peace motion. [SEP]
+iter7: [CLS] image of a. united yourself together. united together peace motion. [SEP]
+iter8: [CLS] image of a. united yourself together. united together peace motion. [SEP]
+iter9: [CLS] image of a. reunited yourself together. united together peace motion. [SEP]
+iter10: [CLS] image of a. smile yourself together. united together peace motion. [SEP]
+Finished in 6.518s
+final caption: image of a. reunited yourself together. united together peace motion.
+best caption: image of a. smile yourself together. united together peace motion.
+The 2-th image: sm.jpeg
+iter1: [CLS] image of a short suit him him him him him him him. [SEP]
+iter2: [CLS] image of a boy suit call call its its its boy its. [SEP]
+iter3: [CLS] image of a boy thing call call thing since its friend thing. [SEP]
+iter4: [CLS] image of a man as named named as named as familiar thing. [SEP]
+iter5: [CLS] image of a man as sb named as named as familiar thing. [SEP]
+iter6: [CLS] image of a man as sb thing thing thing as thing thing. [SEP]
+iter7: [CLS] image of a man as in thing thing thing as thing thing. [SEP]
+iter8: [CLS] image of a man as in thing thing thing as thing thing. [SEP]
+iter9: [CLS] image of a man as in thing thing thing two thing thing. [SEP]
+iter10: [CLS] image of a man as in thing thing thing two thing thing. [SEP]
+Finished in 6.104s
+final caption: image of a man as in thing thing thing two thing thing.
+best caption: image of a man as in thing thing thing two thing thing.
