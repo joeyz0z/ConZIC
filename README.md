@@ -61,7 +61,7 @@ python run.py
 --lm_model "bert-base-uncased" --match_model "clip-vit-base-patch32" 
 --alpha 0.02 --beta 2.0 --gamma 5.0
 ```
-Length: change **sentence_len**.
+**Length**: change **sentence_len**.
 
 
 **Acknowledgment:** This code is based on the [bert-gen](https://github.com/nyu-dl/bert-gen) and [MAGIC](https://github.com/yxuansu/MAGIC). 
