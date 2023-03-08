@@ -64,6 +64,6 @@ python run.py
 Length: change **sentence_len**.
 
 
-**Acknowledgment:** This code is based on the [bert-gen](https://github.com/xinntao/BasicSR) and [MAGIC](https://github.com/megvii-model/HINet). 
+**Acknowledgment:** This code is based on the [bert-gen](https://github.com/nyu-dl/bert-gen) and [MAGIC](https://github.com/yxuansu/MAGIC). 
 
 
