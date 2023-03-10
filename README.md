@@ -63,6 +63,17 @@ python run.py
 ```
 **Length**: change **sentence_len**.
 
+### Citation
+Please cite our work if you use it in your research:
+```
+@article{zeng2023conzic,
+  title={ConZIC: Controllable Zero-shot Image Captioning by Sampling-Based Polishing},
+  author={Zeng, Zequn and Zhang, Hao and Wang, Zhengjue and Lu, Ruiying and Wang, Dongsheng and Chen, Bo},
+  journal={arXiv preprint arXiv:2303.02437},
+  year={2023}
+}
+```
+
 
 **Acknowledgment:** This code is based on the [bert-gen](https://github.com/nyu-dl/bert-gen) and [MAGIC](https://github.com/yxuansu/MAGIC). 
 
