@@ -176,7 +176,7 @@ if __name__ == "__main__":
     clip = clip.to(args.device)
 
     ## Remove stop words, token mask
-    with open(args.stop_words_path,'r') as stop_words_file:
+    with open(args.stop_words_path,'r',encoding='utf-8') as stop_words_file:
         stop_words = stop_words_file.readlines()
         stop_words_ = [stop_word.rstrip('\n') for stop_word in stop_words]
         stop_words_ += args.add_extra_stopwords
