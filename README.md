@@ -1,7 +1,9 @@
-# Pytorch Implementation of [ConZIC: Controllable Zero-shot Image Captioning by Sampling-Based Polishing](https://arxiv.org/abs/2303.02437) [CVPR 2023]
-
+## Pytorch Implementation of [ConZIC: Controllable Zero-shot Image Captioning by Sampling-Based Polishing](https://arxiv.org/abs/2303.02437) [CVPR 2023]
+****
 ### News
-[2023/3] ConZIC is publicly released!
+* [2023/3] ConZIC is publicly released!
+
+****
 
 ### Framework
 ![](paper_images/framework.jpg)
@@ -23,7 +25,7 @@
 
 
 ## DEMO
-
+****
 ### Preparation
 Please download [CLIP](https://huggingface.co/openai/clip-vit-base-patch32) and [BERT](https://huggingface.co/bert-base-uncased) from Huggingface Space.
 
@@ -76,6 +78,7 @@ python run.py
 ```
 **Length**: change **sentence_len**.
 
+****
 ### Citation
 Please cite our work if you use it in your research:
 ```
