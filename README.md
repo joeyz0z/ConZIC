@@ -39,19 +39,19 @@ pip install -r requirements.txt
 ConZIC supports arbitary generation orders by change **order**. You can increase **alpha** for more fluency, **beta** for more image content. Notably, there is a trade-off between fluency and image-matching degree.  
 **Sequential**: update tokens in classical left to right order. At each iteration, the whole sentence will be updated.
 ```
-python run.py --run_type "caption" --order "sequential" --sentence_len 10 --caption_img_path "./examples" 
+python demo.py --run_type "caption" --order "sequential" --sentence_len 10 --caption_img_path "./examples/girl.jpg" --samples_num 1
 --lm_model "bert-base-uncased" --match_model "clip-vit-base-patch32" 
 --alpha 0.02 --beta 2.0
 ```
 **Shuffled**: update tokens in random shuffled generation order, different orders resulting in different captions.
 ```
-python run.py --run_type "caption" --order "shuffle" --sentence_len 10 --caption_img_path "./examples" 
+python demo.py --run_type "caption" --order "shuffle" --sentence_len 10 --caption_img_path "./examples/girl.jpg" --samples_num 3
 --lm_model "bert-base-uncased" --match_model "clip-vit-base-patch32" 
---alpha 0.02 --beta 2.0
+--alpha 0.02 --beta 2.0 
 ```
 **Random**: only randomly select a position and then update this token at each iteration, high diversity due to high randomness. 
 ```
-python run.py --run_type "caption" --order "random" --sentence_len 10 --caption_img_path "./examples" 
+python demo.py --run_type "caption" --order "random" --sentence_len 10 --caption_img_path "./examples/girl.jpg" --samples_num 3
 --lm_model "bert-base-uncased" --match_model "clip-vit-base-patch32" 
 --alpha 0.02 --beta 2.0
 ```
@@ -60,18 +60,18 @@ python run.py --run_type "caption" --order "random" --sentence_len 10 --caption_
 ConZIC supports many text-related controllable signals. For examples:  
 **Sentiments(positive/negative)**: you can increase **gamma** for higher controllable degree, there is also a trade-off.
 ```
-python run.py 
+python demo.py 
 --run_type "controllable" --control_type "sentiment" --sentiment_type "positive"
---order "sequential" --sentence_len 10 --caption_img_path "./examples" 
+--order "sequential" --sentence_len 10 --caption_img_path "./examples/girl.jpg" --samples_num 1
 --lm_model "bert-base-uncased" --match_model "clip-vit-base-patch32" 
 --alpha 0.02 --beta 2.0 --gamma 5.0
 ```
 **Part-of-speech(POS)**: it will meet the predefined POS templete as much as possible.
 ```
-python run.py 
+python demo.py 
 --run_type "controllable" --control_type "pos" --order "sequential"
 --pos_type "your predefined POS templete"
---sentence_len 10 --caption_img_path "./examples" 
+--sentence_len 10 --caption_img_path "./examples/girl.jpg"  --samples_num 1
 --lm_model "bert-base-uncased" --match_model "clip-vit-base-patch32" 
 --alpha 0.02 --beta 2.0 --gamma 5.0
 ```
