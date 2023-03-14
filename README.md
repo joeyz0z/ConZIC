@@ -85,9 +85,10 @@ Please cite our work if you use it in your research:
 ```
 
 ### Contact
-If you have any questions, please contact [Zequn Zeng](zzequn99@163.com) or [Hao Zhang](zhanghao_xidian@163.com).
+If you have any questions, please contact zzequn99@163.com or zhanghao_xidian@163.com.
 
 
-**Acknowledgment:** This code is based on the [bert-gen](https://github.com/nyu-dl/bert-gen) and [MAGIC](https://github.com/yxuansu/MAGIC). 
+### Acknowledgment 
+This code is based on the [bert-gen](https://github.com/nyu-dl/bert-gen) and [MAGIC](https://github.com/yxuansu/MAGIC). 
 
 
