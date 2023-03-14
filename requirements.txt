@@ -1,3 +1,5 @@
 colorlog
 nltk
 transformers
+pytorch
+torchvision

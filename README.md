@@ -26,6 +26,11 @@ Please download [CLIP](https://huggingface.co/openai/clip-vit-base-patch32) and 
 
 SketchyCOCOcaption benchmark in our work in available [here](https://drive.google.com/file/d/1WBaq8OdvyyXpbYtmuFIvko6855rESwHE/view?usp=share_link).
 
+Environments setup.
+```
+pip install -r requirements.txt
+```
+
 ### To run zero-shot captioning on images:
 ConZIC supports arbitary generation orders by change **order**. You can increase **alpha** for more fluency, **beta** for more image content. Notably, there is a trade-off between fluency and image-matching degree.  
 **Sequential**: update tokens in classical left to right order. At each iteration, the whole sentence will be updated.
