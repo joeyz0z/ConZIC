@@ -60,9 +60,9 @@ def get_args():
     parser.add_argument("--num_iterations", type=int, default=10, help="predefined iterations for Gibbs Sampling")
 
     ## Models and Paths
-    parser.add_argument("--lm_model", type=str, default='../HuggingFace/bert-base-uncased',
+    parser.add_argument("--lm_model", type=str, default='bert-base-uncased',
                         help="Path to language model") # bert,roberta
-    parser.add_argument("--match_model", type=str, default='../HuggingFace/clip-vit-base-patch32',
+    parser.add_argument("--match_model", type=str, default='clip-vit-base-patch32',
                         help="Path to Image-Text model")  # clip,align
     parser.add_argument("--caption_img_path", type=str, default='./examples/',
                         help="file path of images for captioning")
