@@ -106,7 +106,9 @@ if __name__ == "__main__":
     run_type = "caption" if args.run_type=="caption" else args.control_type
     if run_type=="sentiment":
         run_type = args.sentiment_type
-
+    
+    if os.path.exists("logger")== False:
+        os.mkdir("logger")
     logger = create_logger(
         "logger",'demo_{}_{}_len{}_topk{}_alpha{}_beta{}_gamma{}_lmtemp{}_{}.log'.format(
         run_type, args.order,args.sentence_len,
