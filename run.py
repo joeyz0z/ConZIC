@@ -16,7 +16,7 @@ def get_args():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--batch_size", type=int, default=1)
+    parser.add_argument("--batch_size", type=int, default=1, help = "Only supports batch_size=1 currently.")
     parser.add_argument("--device", type=str,
                         default='cuda',choices=['cuda','cpu'])
 
