@@ -40,19 +40,19 @@ ConZIC supports arbitary generation orders by change **order**. You can increase
 **Sequential**: update tokens in classical left to right order. At each iteration, the whole sentence will be updated.
 ```
 python demo.py --run_type "caption" --order "sequential" --sentence_len 10 --caption_img_path "./examples/girl.jpg" --samples_num 1
---lm_model "bert-base-uncased" --match_model "clip-vit-base-patch32" 
+--lm_model "bert-base-uncased" --match_model "openai/clip-vit-base-patch32" 
 --alpha 0.02 --beta 2.0
 ```
 **Shuffled**: update tokens in random shuffled generation order, different orders resulting in different captions.
 ```
 python demo.py --run_type "caption" --order "shuffle" --sentence_len 10 --caption_img_path "./examples/girl.jpg" --samples_num 3
---lm_model "bert-base-uncased" --match_model "clip-vit-base-patch32" 
+--lm_model "bert-base-uncased" --match_model "openai/clip-vit-base-patch32" 
 --alpha 0.02 --beta 2.0 
 ```
 **Random**: only randomly select a position and then update this token at each iteration, high diversity due to high randomness. 
 ```
 python demo.py --run_type "caption" --order "random" --sentence_len 10 --caption_img_path "./examples/girl.jpg" --samples_num 3
---lm_model "bert-base-uncased" --match_model "clip-vit-base-patch32" 
+--lm_model "bert-base-uncased" --match_model "openai/clip-vit-base-patch32" 
 --alpha 0.02 --beta 2.0
 ```
 
@@ -63,7 +63,7 @@ ConZIC supports many text-related controllable signals. For examples:
 python demo.py 
 --run_type "controllable" --control_type "sentiment" --sentiment_type "positive"
 --order "sequential" --sentence_len 10 --caption_img_path "./examples/girl.jpg" --samples_num 1
---lm_model "bert-base-uncased" --match_model "clip-vit-base-patch32" 
+--lm_model "bert-base-uncased" --match_model "openai/clip-vit-base-patch32" 
 --alpha 0.02 --beta 2.0 --gamma 5.0
 ```
 **Part-of-speech(POS)**: it will meet the predefined POS templete as much as possible.
@@ -72,7 +72,7 @@ python demo.py
 --run_type "controllable" --control_type "pos" --order "sequential"
 --pos_type "your predefined POS templete"
 --sentence_len 10 --caption_img_path "./examples/girl.jpg"  --samples_num 1
---lm_model "bert-base-uncased" --match_model "clip-vit-base-patch32" 
+--lm_model "bert-base-uncased" --match_model "openai/clip-vit-base-patch32" 
 --alpha 0.02 --beta 2.0 --gamma 5.0
 ```
 **Length**: change **sentence_len**.
