@@ -1,6 +1,24 @@
-## Pytorch Implementation of [ConZIC: Controllable Zero-shot Image Captioning by Sampling-Based Polishing](https://arxiv.org/abs/2303.02437) [CVPR 2023]
+## ConZIC
+**[CVPR 2023][ConZIC: Controllable Zero-shot Image Captioning by Sampling-Based Polishing](https://arxiv.org/abs/2303.02437)**
+<br/>
+[Zequn Zeng](https://joeyz0z.github.io/),
+[Hao Zhang](https://scholar.google.com/citations?user=Eo8e5icAAAAJ),
+[Zhengjue Wang](https://scholar.google.com/citations?user=qTQj_I4AAAAJ),
+[Ruiying Lu](https://ieeexplore.ieee.org/author/37088439713),
+[Dongsheng Wang](https://wds2014.github.io/),
+[Bo Chen](https://scholar.google.com/citations?user=uv16_-UAAAAJ)
+<br/>
+
+
+
+[comment]: <> ([![Project Website]&#40;https://img.shields.io/badge/Project-Website-orange&#41;]&#40;https://tuneavideo.github.io/&#41;)
+[![arXiv](https://img.shields.io/badge/arXiv-2303.02437-b31b1b.svg)](https://arxiv.org/abs/2303.02437)
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/jiaqingj/ConZIC)
+
+[comment]: <> ([![Open In Colab]&#40;https://colab.research.google.com/assets/colab-badge.svg&#41;]&#40;https://colab.research.google.com/github/showlab/Tune-A-Video/blob/main/notebooks/Tune-A-Video.ipynb&#41;)
 
 ### News
+* [2023/4] Adding demo on Huggingface Space!
 * [2023/3] ConZIC is publicly released!
 
 ***
@@ -95,5 +113,7 @@ If you have any questions, please contact zzequn99@163.com or zhanghao_xidian@16
 
 ### Acknowledgment 
 This code is based on the [bert-gen](https://github.com/nyu-dl/bert-gen) and [MAGIC](https://github.com/yxuansu/MAGIC). 
+
+Thanks for Jiaqing Zhang providing huggingface demo.
 
 
