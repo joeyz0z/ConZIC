@@ -1,4 +1,4 @@
-## ConZIC
+# ConZIC
 **[CVPR 2023][ConZIC: Controllable Zero-shot Image Captioning by Sampling-Based Polishing](https://arxiv.org/abs/2303.02437)**
 <br/>
 [Zequn Zeng](https://joeyz0z.github.io/),
