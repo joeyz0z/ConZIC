@@ -114,6 +114,6 @@ If you have any questions, please contact zzequn99@163.com or zhanghao_xidian@16
 ### Acknowledgment 
 This code is based on the [bert-gen](https://github.com/nyu-dl/bert-gen) and [MAGIC](https://github.com/yxuansu/MAGIC). 
 
-Thanks for Jiaqing Zhang providing huggingface demo.
+Thanks for [Jiaqing Jiang](https://github.com/blre6) providing huggingface demo.
 
 
