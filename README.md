@@ -14,11 +14,10 @@
 [comment]: <> ([![Project Website]&#40;https://img.shields.io/badge/Project-Website-orange&#41;]&#40;https://tuneavideo.github.io/&#41;)
 [![arXiv](https://img.shields.io/badge/arXiv-2303.02437-b31b1b.svg)](https://arxiv.org/abs/2303.02437)
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/jiaqingj/ConZIC)
-
-[comment]: <> ([![Open In Colab]&#40;https://colab.research.google.com/assets/colab-badge.svg&#41;]&#40;https://colab.research.google.com/github/showlab/Tune-A-Video/blob/main/notebooks/Tune-A-Video.ipynb&#41;)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MyjEAuygQblYwTjK67ATo7XALuHkkiLa?usp=sharing)
 
 ### News
-* [2023/4] Adding demo on Huggingface Space!
+* [2023/4] Adding demo on Huggingface Space and Colab!
 * [2023/3] ConZIC is publicly released!
 
 ***
@@ -114,6 +113,6 @@ If you have any questions, please contact zzequn99@163.com or zhanghao_xidian@16
 ### Acknowledgment 
 This code is based on the [bert-gen](https://github.com/nyu-dl/bert-gen) and [MAGIC](https://github.com/yxuansu/MAGIC). 
 
-Thanks for [Jiaqing Jiang](https://github.com/blre6) providing huggingface demo.
+Thanks for [Jiaqing Jiang](https://github.com/blre6) providing huggingface and Colab demo.
 
 
