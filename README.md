@@ -94,7 +94,6 @@ python demo.py
 ```
 **Length**: change **sentence_len**.
 
-****
 ## Gradio Demo
 
 ### Preparation
@@ -115,8 +114,8 @@ http://127.0.0.1:7860
 You can also use the **demo.launch()** function to create a public link used by anyone to access the demo from their browser by setting share=True.
 
 ### Use the demo
-Select the type and adjust the parameters.
-Upload an image and click **submit** button, then wait for the results.
+Select the type and adjust the parameters.<br>
+Upload an image and click **submit** button, then wait for the results.<br>
 Click **Reset** button to reset the parameters.
 
 ****
