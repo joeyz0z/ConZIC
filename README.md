@@ -115,7 +115,7 @@ You can also use the **demo.launch()** function to create a public link used by 
 
 ### Use the demo
 Select the type and adjust the parameters.<br>
-Upload an image and click **submit** button, then wait for the results.<br>
+Upload an image and click **Submit** button, then wait for the results.<br>
 Click **Reset** button to reset the parameters.
 
 ****
