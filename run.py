@@ -184,7 +184,7 @@ if __name__ == "__main__":
             if args.run_type == 'caption':
                 all_results = run_caption(args, name, img_tensor_batch, lm_model, lm_tokenizer, clip, token_mask, logger, all_results)
             elif args.run_type == 'controllable':
-                all_results = run_control(run_type, args, name, img_tensor_list,lm_model, lm_tokenizer, clip, token_mask, logger, all_results)
+                all_results = run_control(run_type, args, name, img_tensor_batch, lm_model, lm_tokenizer, clip, token_mask, logger, all_results)
             else:
                 raise Exception('run_type must be caption or controllable!')
 
