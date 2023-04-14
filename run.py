@@ -76,9 +76,9 @@ def get_args():
 
     return args
 
-def run_caption(args, img_name, img_tensor_list, lm_model, lm_tokenizer, clip, token_mask, logger, all_results):
+def run_caption(args, img_name, img_tensor_batch, lm_model, lm_tokenizer, clip, token_mask, logger, all_results):
 
-    image_instance = img_tensor_list
+    image_instance = img_tensor_batch
     
     gen_texts, clip_scores = generate_caption(img_name, lm_model, clip, lm_tokenizer, image_instance, token_mask, logger,
                                 prompt=args.prompt, batch_size=args.batch_size, max_len=args.sentence_len,
@@ -94,9 +94,9 @@ def run_caption(args, img_name, img_tensor_list, lm_model, lm_tokenizer, clip, t
                 all_results[iter_id][image_id] = gen_text_list[jj]
     return all_results
 
-def run_control(run_type, args, img_name, img_tensor_list, lm_model, lm_tokenizer, clip, token_mask, logger, all_results):
+def run_control(run_type, args, img_name, img_tensor_batch, lm_model, lm_tokenizer, clip, token_mask, logger, all_results):
 
-    image_instance = img_tensor_list
+    image_instance = img_tensor_batch
     gen_texts, clip_scores = control_generate_caption(img_name, lm_model, clip, lm_tokenizer, image_instance, token_mask, logger,
                                 prompt=args.prompt, batch_size=args.batch_size, max_len=args.sentence_len,
                                 top_k=args.candidate_k, temperature=args.lm_temperature,
@@ -179,15 +179,10 @@ if __name__ == "__main__":
         all_results = [None] * (args.num_iterations+1)
         logger.info(f"Sample {sample_id+1}: ")
         for batch_idx, (data, name) in enumerate(train_loader):
-            img_tensor_list = []
-            data = data.to(args.device)
-
-            for i in range(args.batch_size):
-                img_tensor_list.append(data[i,:,:])
+            img_tensor_batch = data.to(args.device)
             logger.info(f"The {batch_idx+1}-th batch:")
-
             if args.run_type == 'caption':
-                all_results = run_caption(args, name, img_tensor_list, lm_model, lm_tokenizer, clip, token_mask, logger, all_results)
+                all_results = run_caption(args, name, img_tensor_batch, lm_model, lm_tokenizer, clip, token_mask, logger, all_results)
             elif args.run_type == 'controllable':
                 all_results = run_control(run_type, args, name, img_tensor_list,lm_model, lm_tokenizer, clip, token_mask, logger, all_results)
             else:
