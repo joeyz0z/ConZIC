@@ -95,7 +95,7 @@ python demo.py
 **Length**: change **sentence_len**.
 
 ## Gradio Demo
-### You can use the **WebUI** demo in your browser from the local url: http://127.0.0.1:7860.
+You can use the **WebUI** demo in your browser from the local url: http://127.0.0.1:7860.
 ```
 pip install gradio
 python app.py
