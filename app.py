@@ -80,17 +80,17 @@ def get_args():
 def run_caption(args, image, lm_model, lm_tokenizer, clip, token_mask, logger):
     FinalCaptionList = []
     BestCaptionList = []
-    # logger.info(f"Processing: {image_path}")
+    img_name = ['Your image']
     image_instance = image.convert("RGB")
     for sample_id in range(args.samples_num):
         logger.info(f"Sample {sample_id}: ")
-        gen_texts, clip_scores = generate_caption(lm_model, clip, lm_tokenizer, image_instance, token_mask, logger,
+        gen_texts, clip_scores = generate_caption(img_name, lm_model, clip, lm_tokenizer, image_instance, token_mask, logger,
                                   prompt=args.prompt, batch_size=args.batch_size, max_len=args.sentence_len,
                                   top_k=args.candidate_k, temperature=args.lm_temperature,
                                   max_iter=args.num_iterations,alpha=args.alpha,beta=args.beta,
                                   generate_order = args.order)
-        FinalCaptionStr = "Sample {}: ".format(sample_id + 1) + gen_texts[-2]
-        BestCaptionStr = "Sample {}: ".format(sample_id + 1) + gen_texts[-1]
+        FinalCaptionStr = "Sample {}: ".format(sample_id + 1) + gen_texts[-2][0]
+        BestCaptionStr = "Sample {}: ".format(sample_id + 1) + gen_texts[-1][0]
         FinalCaptionList.append(FinalCaptionStr)
         BestCaptionList.append(BestCaptionStr)
     return FinalCaptionList, BestCaptionList
@@ -100,18 +100,18 @@ def run_caption(args, image, lm_model, lm_tokenizer, clip, token_mask, logger):
 def run_control(run_type, args, image, lm_model, lm_tokenizer, clip, token_mask, logger):
     FinalCaptionList = []
     BestCaptionList = []
-    # logger.info(f"Processing: {image_path}")
+    img_name = ['Your image']
     image_instance = image.convert("RGB")
     for sample_id in range(args.samples_num):
         logger.info(f"Sample {sample_id}: ")
-        gen_texts, clip_scores = control_generate_caption(lm_model, clip, lm_tokenizer, image_instance, token_mask, logger,
+        gen_texts, clip_scores = control_generate_caption(img_name, lm_model, clip, lm_tokenizer, image_instance, token_mask, logger,
                                   prompt=args.prompt, batch_size=args.batch_size, max_len=args.sentence_len,
                                   top_k=args.candidate_k, temperature=args.lm_temperature,
                                   max_iter=args.num_iterations, alpha=args.alpha,
                                   beta=args.beta, gamma=args.gamma,
                                   ctl_type = args.control_type, style_type=args.sentiment_type,pos_type=args.pos_type, generate_order=args.order)
-        FinalCaptionStr = "Sample {}: ".format(sample_id + 1) + gen_texts[-2]
-        BestCaptionStr = "Sample {}: ".format(sample_id + 1) + gen_texts[-1]
+        FinalCaptionStr = "Sample {}: ".format(sample_id + 1) + gen_texts[-2][0]
+        BestCaptionStr = "Sample {}: ".format(sample_id + 1) + gen_texts[-1][0]
         FinalCaptionList.append(FinalCaptionStr)
         BestCaptionList.append(BestCaptionStr)
     return FinalCaptionList, BestCaptionList
