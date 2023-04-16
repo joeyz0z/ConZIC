@@ -11,7 +11,6 @@ from gen_utils import generate_caption
 from control_gen_utils import control_generate_caption
 from transformers import AutoModelForMaskedLM, AutoTokenizer
 from torch.utils.data import Dataset, DataLoader
-from torchvision import transforms
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -76,10 +75,9 @@ def get_args():
 
     return args
 
-def run_caption(args, img_name, img_tensor_list, lm_model, lm_tokenizer, clip, token_mask, logger, all_results):
+def run_caption(args, img_name, img_pil_list, lm_model, lm_tokenizer, clip, token_mask, logger, all_results):
 
-    image_instance = img_tensor_list
-    
+    image_instance = img_pil_list
     gen_texts, clip_scores = generate_caption(img_name, lm_model, clip, lm_tokenizer, image_instance, token_mask, logger,
                                 prompt=args.prompt, batch_size=args.batch_size, max_len=args.sentence_len,
                                 top_k=args.candidate_k, temperature=args.lm_temperature,
@@ -94,9 +92,9 @@ def run_caption(args, img_name, img_tensor_list, lm_model, lm_tokenizer, clip, t
                 all_results[iter_id][image_id] = gen_text_list[jj]
     return all_results
 
-def run_control(run_type, args, img_name, img_tensor_list, lm_model, lm_tokenizer, clip, token_mask, logger, all_results):
+def run_control(run_type, args, img_name, img_pil_list, lm_model, lm_tokenizer, clip, token_mask, logger, all_results):
 
-    image_instance = img_tensor_list
+    image_instance = img_pil_list
     gen_texts, clip_scores = control_generate_caption(img_name, lm_model, clip, lm_tokenizer, image_instance, token_mask, logger,
                                 prompt=args.prompt, batch_size=args.batch_size, max_len=args.sentence_len,
                                 top_k=args.candidate_k, temperature=args.lm_temperature,
@@ -155,7 +153,7 @@ if __name__ == "__main__":
 
     img_dir = args.caption_img_path
 
-    class Mydata(Dataset):
+    class Imgdata(Dataset):
         def __init__(self, dir_path):
             self.dir_path = dir_path
             self.img_name_list = os.listdir(dir_path)
@@ -164,32 +162,30 @@ if __name__ == "__main__":
             img_name = self.img_name_list[idx]
             img_item_path = os.path.join(self.dir_path,img_name)
             img = Image.open(img_item_path).convert("RGB")
-            trans = transforms.Compose([transforms.Resize((224,224)),transforms.ToTensor()])
-            img = trans(img)
             return img, img_name
         def __len__(self):
             return len(self.img_name_list)
     
-    img_data = Mydata(img_dir)
-
-    train_loader = DataLoader(img_data, batch_size=args.batch_size, shuffle=False, drop_last=True)
+    def collate_img(batch_data):
+        img_path_batch_list = list()
+        name_batch_list = list()
+        for unit in batch_data:
+            img_path_batch_list.append(unit[0])
+            name_batch_list.append(unit[1])
+        return img_path_batch_list,name_batch_list
+    
+    img_data = Imgdata(img_dir)
+    train_loader = DataLoader(img_data, batch_size=args.batch_size, collate_fn=collate_img, shuffle=False, drop_last=True)
 
     for sample_id in range(args.samples_num):
-
         all_results = [None] * (args.num_iterations+1)
         logger.info(f"Sample {sample_id+1}: ")
-        for batch_idx, (data, name) in enumerate(train_loader):
-            img_tensor_list = []
-            data = data.to(args.device)
-
-            for i in range(args.batch_size):
-                img_tensor_list.append(data[i,:,:])
+        for batch_idx, (img_batch_pil_list, name_batch_list) in enumerate(train_loader):
             logger.info(f"The {batch_idx+1}-th batch:")
-
             if args.run_type == 'caption':
-                all_results = run_caption(args, name, img_tensor_list, lm_model, lm_tokenizer, clip, token_mask, logger, all_results)
+                all_results = run_caption(args, name_batch_list, img_batch_pil_list, lm_model, lm_tokenizer, clip, token_mask, logger, all_results)
             elif args.run_type == 'controllable':
-                all_results = run_control(run_type, args, name, img_tensor_list,lm_model, lm_tokenizer, clip, token_mask, logger, all_results)
+                all_results = run_control(run_type, args, name_batch_list, img_batch_pil_list,lm_model, lm_tokenizer, clip, token_mask, logger, all_results)
             else:
                 raise Exception('run_type must be caption or controllable!')
 
