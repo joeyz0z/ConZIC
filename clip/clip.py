@@ -85,15 +85,17 @@ class CLIP(nn.Module):
 
     def compute_image_text_similarity_via_embeddings(self, image_embeds, text_embeds):
         '''
-            image_embeds: 1 x embed_dim
-            text_embeds: len(text_list) x embed_dim
+            image_embeds: batch x embed_dim
+            text_embeds: batch x len(text_list) x embed_dim
         '''
+        text_embeds = text_embeds.view(image_embeds.shape[0], -1, text_embeds.shape[-1])
         image_embeds = image_embeds / image_embeds.norm(dim=-1, keepdim=True)
         text_embeds = text_embeds / text_embeds.norm(dim=-1, keepdim=True)
+        image_embeds = image_embeds.unsqueeze(-1)
         logit_scale = self.model.logit_scale.exp()
-        logits_per_text = torch.matmul(text_embeds, image_embeds.t()) * logit_scale
-        logits_per_image = logits_per_text.T
-        return logits_per_image.softmax(dim=1), logits_per_image/logit_scale # 1 x len(text_list)
+        logits_per_text = torch.matmul(text_embeds, image_embeds) * logit_scale
+        logits_per_image = logits_per_text.squeeze(-1)
+        return logits_per_image.softmax(dim=1), logits_per_image/logit_scale # batch x len(text_list)
 
     def compute_image_text_similarity_via_raw_text(self, image_embeds, text_list):
         text_embeds = self.compute_text_representation(text_list)
