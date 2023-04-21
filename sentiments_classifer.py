@@ -43,9 +43,9 @@ def batch_texts_POS_Sentiments_analysis(batch_texts, temperature,device,sentimen
         senti_scores[b_id] = score
         pos_tags.append(cur_tag)
         wordnet_pos_tags.append(cur_word_tag)
-    senti_scores_batch = senti_scores.view(batch_size, -1)
+    senti_scores_batch = senti_scores.view(batch_size_image, -1)
     senti_probs_batch = F.softmax(senti_scores_batch / temperature,dim=1).to(device)
-    return senti_probs_batch, senti_scores, pos_tags, wordnet_pos_tags
+    return senti_probs_batch, senti_scores_batch, pos_tags, wordnet_pos_tags
 
 
 
