@@ -30,7 +30,7 @@ def get_args():
     parser.add_argument('--order',
                         default='shuffle',
                         nargs='?',
-                        choices=['sequential', 'shuffle', 'span', 'random','parallel'],
+                        choices=['sequential', 'shuffle', 'span', 'random'],
                         help="Generation order of text")
     parser.add_argument('--control_type',
                         default='sentiment',
@@ -79,7 +79,7 @@ def run_caption(args, image_path, lm_model, lm_tokenizer, clip, token_mask, logg
 
     logger.info(f"Processing: {image_path}")
     image_instance = Image.open(image_path).convert("RGB")
-    img_name = [image_path.spilt("/")[-1]]
+    img_name = [image_path.split("/")[-1]]
     for sample_id in range(args.samples_num):
         logger.info(f"Sample {sample_id}: ")
         gen_texts, clip_scores = generate_caption(img_name,lm_model, clip, lm_tokenizer, image_instance, token_mask, logger,
@@ -92,7 +92,7 @@ def run_control(run_type, args, image_path, lm_model, lm_tokenizer, clip, token_
 
     logger.info(f"Processing: {image_path}")
     image_instance = Image.open(image_path).convert("RGB")
-    img_name = [image_path.spilt("/")[-1]]
+    img_name = [image_path.split("/")[-1]]
     for sample_id in range(args.samples_num):
         logger.info(f"Sample {sample_id}: ")
         gen_texts, clip_scores = control_generate_caption(img_name,lm_model, clip, lm_tokenizer, image_instance, token_mask, logger,

@@ -95,28 +95,12 @@ python demo.py
 **Length**: change **sentence_len**.
 
 ## Gradio Demo
-
-### Preparation
-
-Environments setup.
+You can use the **WebUI** demo in your browser from the local url: http://127.0.0.1:7860.
 ```
 pip install gradio
-```
-### Run the app.py
-
-```
 python app.py
 ```
-### Visit the local URL in your browser
-```
-http://127.0.0.1:7860
-```
 You can also use the **demo.launch()** function to create a public link used by anyone to access the demo from their browser by setting share=True.
-
-### Use the demo
-Select the type and adjust the parameters.<br>
-Upload an image and click **Submit** button, then wait for the results.<br>
-Click **Reset** button to reset the parameters.
 
 ****
 ### Citation

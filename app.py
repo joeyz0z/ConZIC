@@ -20,7 +20,7 @@ def get_args():
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--batch_size", type=int, default=1, help = "Only supports batch_size=1 currently.")
     parser.add_argument("--device", type=str,
-                        default='cpu',choices=['cuda','cpu'])
+                        default='cuda',choices=['cuda','cpu'])
 
     ## Generation and Controllable Type
     parser.add_argument('--run_type',
@@ -32,7 +32,7 @@ def get_args():
     parser.add_argument('--order',
                         default='shuffle',
                         nargs='?',
-                        choices=['sequential', 'shuffle', 'span', 'random','parallel'],
+                        choices=['sequential', 'shuffle', 'span', 'random'],
                         help="Generation order of text")
     parser.add_argument('--control_type',
                         default='sentiment',
