@@ -45,7 +45,7 @@
 ### Preparation
 Please download [CLIP](https://huggingface.co/openai/clip-vit-base-patch32) and [BERT](https://huggingface.co/bert-base-uncased) from Huggingface Space.
 
-SketchyCOCOcaption benchmark in our work in available [here](https://drive.google.com/file/d/1WBaq8OdvyyXpbYtmuFIvko6855rESwHE/view?usp=share_link).
+SketchyCOCOcaption benchmark in our work is available [here](https://drive.google.com/file/d/1WBaq8OdvyyXpbYtmuFIvko6855rESwHE/view?usp=share_link).
 
 Environments setup.
 ```
@@ -93,6 +93,14 @@ python demo.py
 --alpha 0.02 --beta 2.0 --gamma 5.0
 ```
 **Length**: change **sentence_len**.
+
+## Gradio Demo
+You can use the **WebUI** demo in your browser from the local url: http://127.0.0.1:7860.
+```
+pip install gradio
+python app.py
+```
+You can also use the **demo.launch()** function to create a public link used by anyone to access the demo from their browser by setting share=True.
 
 ****
 ### Citation
