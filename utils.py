@@ -57,3 +57,18 @@ def update_token_mask(tokenizer, token_mask, max_len, index):
     else:
         token_mask[:, tokenizer.vocab['.']] = 0
     return token_mask
+
+def format_output(sample_num, FinalCaption, BestCaption):
+    if sample_num == 1:
+        return f"{FinalCaption[0]}", f"{BestCaption[0]}"
+    elif sample_num ==2:
+        return f"{FinalCaption[0]}\n{FinalCaption[1]}", f"{BestCaption[0]}\n{BestCaption[1]}"
+    elif sample_num ==3:
+        return f"{FinalCaption[0]}\n{FinalCaption[1]}\n{FinalCaption[2]}",\
+            f"{BestCaption[0]}\n{BestCaption[1]}\n{BestCaption[2]}"
+    elif sample_num ==4:
+        return f"{FinalCaption[0]}\n{FinalCaption[1]}\n{FinalCaption[2]}\n{FinalCaption[3]}",\
+            f"{BestCaption[0]}\n{BestCaption[1]}\n{BestCaption[2]}\n{BestCaption[3]}"
+    else:
+        return f"{FinalCaption[0]}\n{FinalCaption[1]}\n{FinalCaption[2]}\n{FinalCaption[3]}\n{FinalCaption[4]}",\
+            f"{BestCaption[0]}\n{BestCaption[1]}\n{BestCaption[2]}\n{BestCaption[3]}\n{BestCaption[4]}"
