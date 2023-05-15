@@ -5,6 +5,7 @@ import random
 import torch
 
 
+
 def create_logger(folder, filename):
     log_colors = {
         'DEBUG': 'blue',
@@ -43,20 +44,6 @@ def set_seed(seed):
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
 
-def get_init_text(tokenizer, seed_text, max_len, batch_size=1):
-    """ Get initial sentence by padding seed_text with [mask] words to max_len """
-    text = seed_text + tokenizer.mask_token * max_len
-    ids = tokenizer.encode(text)
-    batch = [ids] * batch_size
-    return batch
-
-def update_token_mask(tokenizer, token_mask, max_len, index):
-    """ '.'(full stop) is only allowed in the last token position """
-    if index == max_len - 1:
-        token_mask[:, tokenizer.vocab['.']] = 1
-    else:
-        token_mask[:, tokenizer.vocab['.']] = 0
-    return token_mask
 
 def format_output(sample_num, FinalCaption, BestCaption):
     if sample_num == 1:
@@ -72,3 +59,4 @@ def format_output(sample_num, FinalCaption, BestCaption):
     else:
         return f"{FinalCaption[0]}\n{FinalCaption[1]}\n{FinalCaption[2]}\n{FinalCaption[3]}\n{FinalCaption[4]}",\
             f"{BestCaption[0]}\n{BestCaption[1]}\n{BestCaption[2]}\n{BestCaption[3]}\n{BestCaption[4]}"
+

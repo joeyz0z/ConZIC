@@ -6,7 +6,7 @@ import os
 
 def parse_config():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--clip_name", type=str, default="openai/clip-vit-base-patch32")
+    parser.add_argument("--clip_name", type=str, default="openai/vl_models-vit-base-patch32")
     parser.add_argument("--text_file_path", type=str)
     # save configuration
     parser.add_argument("--save_index_prefix", type=str, help='where to save the mips index')

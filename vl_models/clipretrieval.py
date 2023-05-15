@@ -10,7 +10,7 @@ class CLIPIndex:
         '''
             index_path: the pre-trained index
             mapping_dict_path: the pre-indexed mapping dictionary
-            clip: the pre-trained clip model
+            vl_models: the pre-trained vl_models model
         '''
         print ('Loading index...')
         self.index_matrix = self.normalization(self.load_matrix(index_matrix_path))

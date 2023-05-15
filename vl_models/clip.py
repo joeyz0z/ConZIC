@@ -6,7 +6,7 @@ from PIL import Image
 class CLIP(nn.Module):
     def __init__(self, model_name):
         super(CLIP, self).__init__()
-        # model name: e.g. openai/clip-vit-base-patch32
+        # model name: e.g. openai/vl_models-vit-base-patch32
         print ('Initializing CLIP model...')
         from transformers import CLIPProcessor, CLIPModel
         self.model = CLIPModel.from_pretrained(model_name)

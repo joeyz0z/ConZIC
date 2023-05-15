@@ -1,88 +1,24 @@
-from utils import create_logger,set_seed
 import os
 import time
-import argparse
 import json
-from PIL import Image
 import torch
+from torch.utils.data import DataLoader
 
-from clip.clip import CLIP
-from gen_utils import generate_caption
-from control_gen_utils import control_generate_caption
+from args import get_args
+from utils import create_logger,set_seed
+from vl_models.clip import CLIP
+from generation_utils.gen_util import generate_caption
+from generation_utils.control_gen_util import control_generate_caption
 from transformers import AutoModelForMaskedLM, AutoTokenizer
-from torch.utils.data import Dataset, DataLoader
-
-def get_args():
-    parser = argparse.ArgumentParser()
-
-    parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--batch_size", type=int, default=2, help = "support batch_size>1 currently.")
-    parser.add_argument("--device", type=str,
-                        default='cuda',choices=['cuda','cpu'])
-
-    ## Generation and Controllable Type
-    parser.add_argument('--run_type',
-                        default='controllable',
-                        nargs='?',
-                        choices=['caption', 'controllable'])
-    parser.add_argument('--prompt',
-                        default='Image of a',type=str)
-    parser.add_argument('--order',
-                        default='shuffle',
-                        nargs='?',
-                        choices=['sequential', 'shuffle', 'span', 'random'],
-                        help="Generation order of text")
-    parser.add_argument('--control_type',
-                        default='sentiment',
-                        nargs='?',
-                        choices=["sentiment","pos"],
-                        help="which controllable task to conduct")
-    parser.add_argument('--pos_type', type=list,
-                        default=[['DET'], ['ADJ','NOUN'], ['NOUN'],
-                                 ['VERB'], ['VERB'],['ADV'], ['ADP'],
-                                 ['DET','NOUN'], ['NOUN'], ['NOUN','.'],
-                                 ['.','NOUN'],['.','NOUN']],
-                        help="predefined part-of-speech templete")
-    parser.add_argument('--sentiment_type',
-                        default="positive",
-                        nargs='?',
-                        choices=["positive", "negative"])
-    parser.add_argument('--samples_num',
-                        default=2,type=int)
-
-    ## Hyperparameters
-    parser.add_argument("--sentence_len", type=int, default=10)
-    parser.add_argument("--candidate_k", type=int, default=200)
-    parser.add_argument("--alpha", type=float, default=0.02, help="weight for fluency")
-    parser.add_argument("--beta", type=float, default=2.0, help="weight for image-matching degree")
-    parser.add_argument("--gamma", type=float, default=5.0, help="weight for controllable degree")
-    parser.add_argument("--lm_temperature", type=float, default=0.1)
-    parser.add_argument("--num_iterations", type=int, default=10, help="predefined iterations for Gibbs Sampling")
-
-    ## Models and Paths
-    parser.add_argument("--lm_model", type=str, default='bert-base-uncased',
-                        help="Path to language model") # bert,roberta
-    parser.add_argument("--match_model", type=str, default='clip-vit-base-patch32',
-                        help="Path to Image-Text model")  # clip,align
-    parser.add_argument("--caption_img_path", type=str, default='./examples/',
-                        help="file path of images for captioning")
-    parser.add_argument("--stop_words_path", type=str, default='stop_words.txt',
-                        help="Path to stop_words.txt")
-    parser.add_argument("--add_extra_stopwords", type=list, default=[],
-                        help="you can add some extra stop words")
-
-    args = parser.parse_args()
-
-    return args
+from dataset.ImgDataset import Imgdata, collate_img
 
 def run_caption(args, img_name, img_pil_list, lm_model, lm_tokenizer, clip, token_mask, logger, all_results):
-
     image_instance = img_pil_list
     gen_texts, clip_scores = generate_caption(img_name, lm_model, clip, lm_tokenizer, image_instance, token_mask, logger,
                                 prompt=args.prompt, batch_size=args.batch_size, max_len=args.sentence_len,
                                 top_k=args.candidate_k, temperature=args.lm_temperature,
-                                max_iter=args.num_iterations,alpha=args.alpha,beta=args.beta,
-                                generate_order = args.order)
+                                max_iter=args.num_iterations, alpha=args.alpha,beta=args.beta,
+                                generate_order = args.order, stable_replace=args.stable_replace)
     for iter_id, gen_text_list in enumerate(gen_texts):
         for jj in range(len(gen_text_list)):
             image_id = img_name[jj].split(".")[0]
@@ -99,7 +35,7 @@ def run_control(run_type, args, img_name, img_pil_list, lm_model, lm_tokenizer, 
                                 prompt=args.prompt, batch_size=args.batch_size, max_len=args.sentence_len,
                                 top_k=args.candidate_k, temperature=args.lm_temperature,
                                 max_iter=args.num_iterations, alpha=args.alpha,
-                                beta=args.beta, gamma=args.gamma,
+                                beta=args.beta, gamma=args.gamma,stable_replace=args.stable_replace,
                                 ctl_type = args.control_type, style_type=args.sentiment_type,pos_type=args.pos_type, generate_order=args.order)
 
     for iter_id, gen_text_list in enumerate(gen_texts):
@@ -151,31 +87,10 @@ if __name__ == "__main__":
             token_mask[0,stop_id]=0
         token_mask = token_mask.to(args.device)
 
+    # Dataset
     img_dir = args.caption_img_path
-
-    class Imgdata(Dataset):
-        def __init__(self, dir_path):
-            self.dir_path = dir_path
-            self.img_name_list = os.listdir(dir_path)
-
-        def __getitem__(self, idx):
-            img_name = self.img_name_list[idx]
-            img_item_path = os.path.join(self.dir_path,img_name)
-            img = Image.open(img_item_path).convert("RGB")
-            return img, img_name
-        def __len__(self):
-            return len(self.img_name_list)
-    
-    def collate_img(batch_data):
-        img_path_batch_list = list()
-        name_batch_list = list()
-        for unit in batch_data:
-            img_path_batch_list.append(unit[0])
-            name_batch_list.append(unit[1])
-        return img_path_batch_list,name_batch_list
-    
     img_data = Imgdata(img_dir)
-    train_loader = DataLoader(img_data, batch_size=args.batch_size, collate_fn=collate_img, shuffle=False, drop_last=True)
+    train_loader = DataLoader(img_data, batch_size=args.batch_size, collate_fn=collate_img, shuffle=False, drop_last=False)
 
     for sample_id in range(args.samples_num):
         all_results = [None] * (args.num_iterations+1)
@@ -189,8 +104,9 @@ if __name__ == "__main__":
             else:
                 raise Exception('run_type must be caption or controllable!')
 
+        # Save results
         if args.run_type == 'caption':
-            # 保存结果
+
             save_dir = "results/caption_%s_len%d_topk%d_alpha%.3f_beta%.3f_gamma%.3f_lmTemp%.3f/sample_%d" % (
             args.order,args.sentence_len, args.candidate_k, args.alpha, args.beta,args.gamma,args.lm_temperature,sample_id)
             if os.path.exists(save_dir) == False:

@@ -22,22 +22,22 @@
 
 ***
 ### Framework
-![](paper_images/framework.jpg)
+![](docs/framework.jpg)
 
 ### Example of length control
-![](paper_images/lengthcontrol.jpg)
+![](docs/lengthcontrol.jpg)
 
 ### Example of sentiment control
-![](paper_images/sentimentcontrol.jpg)
+![](docs/sentimentcontrol.jpg)
 
 ### Example of part-of-speech control
-![](paper_images/poscontrol.jpg)
+![](docs/poscontrol.jpg)
 
 ### Example of diverse captioning
-![](paper_images/diversecaptioning.jpg)
+![](docs/diversecaptioning.jpg)
 
 ### Example of various image styles with world knowledge
-![](paper_images/moreimagestyles.jpg)
+![](docs/moreimagestyles.jpg)
 
 
 ## DEMO
@@ -95,13 +95,13 @@ python demo.py
 **Length**: change **sentence_len**.
 
 ## Gradio Demo
-We highly recommend to use the following **WebUI** demo in your browser from the local url: http://127.0.0.1:7860.
+You can use the **WebUI** demo in your browser from the local url: http://127.0.0.1:7860.
 ```
 pip install gradio
-python app.py --lm_model "bert-base-uncased" --match_model "openai/clip-vit-base-patch32" 
+python app.py
 ```
 You can also use the **demo.launch()** function to create a public link used by anyone to access the demo from their browser by setting share=True.
-
+![](docs/app.png)
 ****
 ### Citation
 Please cite our work if you use it in your research:
