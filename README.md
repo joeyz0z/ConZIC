@@ -22,23 +22,12 @@
 
 ***
 ### Framework
-![](docs/framework.jpg)
+![](docs/framework.gif)
+#### Non autoregressive language model: Gibbs-BERT
+![](docs/gibbs_bert.gif)
 
-### Example of length control
-![](docs/lengthcontrol.jpg)
-
-### Example of sentiment control
+#### Example of sentiment control
 ![](docs/sentimentcontrol.jpg)
-
-### Example of part-of-speech control
-![](docs/poscontrol.jpg)
-
-### Example of diverse captioning
-![](docs/diversecaptioning.jpg)
-
-### Example of various image styles with world knowledge
-![](docs/moreimagestyles.jpg)
-
 
 ## DEMO
 
