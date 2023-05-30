@@ -25,7 +25,7 @@
 ![](paper_images/framework.gif)
 
 #### Gibbs-BERT
-![](paper_images/gibbs_bert.gif)
+![](paper_images/gibbs_bert_mask.gif)
 
 #### Example of sentiment control
 ![](paper_images/sentimentcontrol.jpg)
