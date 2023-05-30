@@ -24,7 +24,7 @@
 ### Framework
 ![](docs/framework.gif)
 #### Non autoregressive language model: Gibbs-BERT
-![](docs/gibbs_bert.gif)
+![](docs/gibbs_bert_mask.gif)
 
 #### Example of sentiment control
 ![](docs/sentimentcontrol.jpg)
