@@ -168,13 +168,13 @@ def Demo(RunType, ControlType, SentimentType, Order, Length, NumIterations, Samp
         for stop_id in stop_ids:
             token_mask[0,stop_id]=0
         token_mask = token_mask.to(args.device)
-
-    if args.run_type == 'caption':
-        FinalCaption, BestCaption = run_caption(args, img, lm_model, lm_tokenizer, clip, token_mask, logger)
-    elif args.run_type == 'controllable':
-        FinalCaption, BestCaption = run_control(run_type, args, img, lm_model, lm_tokenizer, clip, token_mask, logger)
-    else:
-        raise Exception('run_type must be caption or controllable!')
+    with torch.no_grad():
+        if args.run_type == 'caption':
+            FinalCaption, BestCaption = run_caption(args, img, lm_model, lm_tokenizer, clip, token_mask, logger)
+        elif args.run_type == 'controllable':
+            FinalCaption, BestCaption = run_control(run_type, args, img, lm_model, lm_tokenizer, clip, token_mask, logger)
+        else:
+            raise Exception('run_type must be caption or controllable!')
 
     logger.handlers = []
 

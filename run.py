@@ -180,14 +180,16 @@ if __name__ == "__main__":
     for sample_id in range(args.samples_num):
         all_results = [None] * (args.num_iterations+1)
         logger.info(f"Sample {sample_id+1}: ")
+
         for batch_idx, (img_batch_pil_list, name_batch_list) in enumerate(train_loader):
             logger.info(f"The {batch_idx+1}-th batch:")
-            if args.run_type == 'caption':
-                all_results = run_caption(args, name_batch_list, img_batch_pil_list, lm_model, lm_tokenizer, clip, token_mask, logger, all_results)
-            elif args.run_type == 'controllable':
-                all_results = run_control(run_type, args, name_batch_list, img_batch_pil_list,lm_model, lm_tokenizer, clip, token_mask, logger, all_results)
-            else:
-                raise Exception('run_type must be caption or controllable!')
+            with torch.no_grad():
+                if args.run_type == 'caption':
+                    all_results = run_caption(args, name_batch_list, img_batch_pil_list, lm_model, lm_tokenizer, clip, token_mask, logger, all_results)
+                elif args.run_type == 'controllable':
+                    all_results = run_control(run_type, args, name_batch_list, img_batch_pil_list,lm_model, lm_tokenizer, clip, token_mask, logger, all_results)
+                else:
+                    raise Exception('run_type must be caption or controllable!')
 
         if args.run_type == 'caption':
             # 保存结果

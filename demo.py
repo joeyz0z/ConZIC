@@ -143,12 +143,13 @@ if __name__ == "__main__":
         token_mask = token_mask.to(args.device)
 
     img_path = args.caption_img_path
-    if args.run_type == 'caption':
-        run_caption(args, img_path, lm_model, lm_tokenizer, clip, token_mask, logger)
-    elif args.run_type == 'controllable':
-        run_control(run_type, args, img_path, lm_model, lm_tokenizer, clip, token_mask, logger)
-    else:
-        raise Exception('run_type must be caption or controllable!')
+    with torch.no_grad():
+        if args.run_type == 'caption':
+            run_caption(args, img_path, lm_model, lm_tokenizer, clip, token_mask, logger)
+        elif args.run_type == 'controllable':
+            run_control(run_type, args, img_path, lm_model, lm_tokenizer, clip, token_mask, logger)
+        else:
+            raise Exception('run_type must be caption or controllable!')
 
 
 
