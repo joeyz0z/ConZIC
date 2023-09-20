@@ -225,7 +225,7 @@ with gr.Blocks() as demo:
 
             with gr.Row():
                 Length = gr.Slider(
-                    5, 15, value=10, label="Sentence Length", info="Choose betwen 5 and 15", step=1
+                    5, 15, value=10, label="Sentence Length", info="Choose between 5 and 15", step=1
                 )
                 NumIterations = gr.Slider(
                     1, 15, value=10, label="Num Iterations", info="predefined iterations for Gibbs Sampling", step=1
