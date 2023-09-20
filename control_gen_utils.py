@@ -198,7 +198,7 @@ def control_generate_caption(img_name, model, clip, tokenizer,image_instance,tok
                      prompt="", batch_size=10, max_len=25,
                     top_k=100, temperature=1.0, max_iter=500,alpha=0.7,beta=1,gamma=5,
                     ctl_type="sentiment", style_type="positive",pos_type=None,generate_order="sequential"):
-    # controllable funcitions to call
+    # controllable functions to call
     start_time = time.time()
     if ctl_type=="sentiment": # sentiment control
         if generate_order=="sequential":
